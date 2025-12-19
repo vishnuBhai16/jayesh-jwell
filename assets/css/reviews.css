@@ -1,0 +1,164 @@
+:root {
+  --primary: #c8a14a;
+  --dark: #0e0e0e;
+  --light: #f9f9f9;
+  --gray: #777;
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--light);
+  color: var(--dark);
+}
+
+/* NAVBAR */
+.navbar {
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 26px;
+}
+
+.nav-links a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: var(--dark);
+}
+
+.nav-btn {
+  padding: 8px 18px;
+  border: 1px solid var(--dark);
+  border-radius: 30px;
+}
+
+/* HERO */
+.reviews-hero {
+  padding: 120px 20px;
+  background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+    url("https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f") center/cover;
+  text-align: center;
+  color: white;
+}
+
+.reviews-hero h1 {
+  font-family: var(--font-heading);
+  font-size: 52px;
+}
+
+.reviews-hero p {
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+/* REVIEWS */
+.reviews-section {
+  padding: 100px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+.review-card {
+  background: white;
+  padding: 40px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.08);
+}
+
+.review-card img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.review-card h3 {
+  font-size: 20px;
+}
+
+.review-card span {
+  font-size: 14px;
+  color: var(--gray);
+}
+
+.stars {
+  margin: 10px 0;
+  color: var(--primary);
+  font-size: 18px;
+}
+
+.review-card p {
+  margin-top: 10px;
+  font-size: 15px;
+  color: #444;
+}
+
+/* CTA */
+.review-cta {
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 90px 20px;
+}
+
+.review-cta h2 {
+  font-family: var(--font-heading);
+  font-size: 40px;
+}
+
+.review-cta p {
+  margin: 15px 0 30px;
+}
+
+.btn-primary {
+  background: white;
+  color: var(--dark);
+  padding: 14px 36px;
+  border-radius: 40px;
+  text-decoration: none;
+}
+
+/* FOOTER */
+.footer {
+  background: black;
+  color: #aaa;
+  text-align: center;
+  padding: 25px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .reviews-hero h1 {
+    font-size: 40px;
+  }
+}

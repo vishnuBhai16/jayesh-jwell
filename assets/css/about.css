@@ -15,14 +15,20 @@
 
 body {
   font-family: var(--font-body);
-  background: var(--light);
+   background: radial-gradient(
+  circle at top center,
+  #FFFFFF 0%,
+  #FFF5F7 30%,
+  #FDF2F4 55%,
+  #F2DEE4 100%
+);;
   color: var(--dark);
   line-height: 1.7;
 }
 
 /* NAVBAR (reuse logic) */
 .navbar {
-  background: white;
+  background: linear-gradient(45deg, #ffc3a0, #FFAFBD);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -59,13 +65,12 @@ body {
 /* HERO */
 .about-hero {
   height: 60vh;
-  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-    url("https://images.unsplash.com/photo-1602526216431-7d7b0bbebef7") center/cover;
+ background:linear-gradient(135deg,  #d9a7c7, #fffcdc);
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: white;
+  color: black;
 }
 
 .about-hero h1 {
@@ -112,7 +117,13 @@ body {
 
 /* VALUES */
 .about-values {
-  background: white;
+   background: radial-gradient(
+  circle at top center,
+  #FFFFFF 0%,
+  #FFF5F7 30%,
+  #FDF2F4 55%,
+  #F2DEE4 100%
+);;
   padding: 100px 20px;
   text-align: center;
 }
@@ -144,7 +155,7 @@ body {
 /* CTA */
 .about-cta {
   padding: 80px 20px;
-  background: var(--dark);
+  background: linear-gradient(45deg, #ffc3a0, #FFAFBD);
   color: white;
   text-align: center;
 }
@@ -156,7 +167,7 @@ body {
 }
 
 .btn-primary {
-  background: white;
+  background: linear-gradient(45deg, #FC5C7D, #6A82FB );
   color: var(--dark);
   padding: 14px 32px;
   border-radius: 40px;
@@ -166,7 +177,7 @@ body {
 
 /* FOOTER */
 .footer {
-  background: #000;
+  background: linear-gradient(45deg, #ffc3a0, #FFAFBD);
   color: #aaa;
   padding: 25px;
   text-align: center;

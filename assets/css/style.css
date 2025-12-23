@@ -186,7 +186,13 @@ body {
 
 /* ================= TRUST ================= */
 .trust {
-  background: white;
+  background: radial-gradient(
+  to top center,
+  #FFFFFF 0%,
+  #FFF5F7 30%,
+  #FDF2F4 55%,
+  #F2DEE4 100%
+);
   padding: 40px 20px;
   display: flex;
   justify-content: center;

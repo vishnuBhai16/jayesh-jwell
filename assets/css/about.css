@@ -1,5 +1,5 @@
 :root {
-  --primary: #c8a14a;
+  --primary:  #6A82FB;
   --dark: #0e0e0e;
   --light: #f9f9f9;
   --gray: #777;
@@ -21,7 +21,7 @@ body {
   #FFF5F7 30%,
   #FDF2F4 55%,
   #F2DEE4 100%
-);;
+);
   color: var(--dark);
   line-height: 1.7;
 }

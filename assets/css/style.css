@@ -1,6 +1,6 @@
 /* ================= ROOT ================= */
 :root {
-  --primary: #c8a14a;
+  --primary: ;
   --dark: #0e0e0e;
   --light: #f9f9f9;
   --gray: #777;
@@ -17,7 +17,15 @@
 
 body {
   font-family: var(--font-body);
-  background: var(--light);
+ background: radial-gradient(
+  circle at top center,
+  #FFFFFF 0%,
+  #FFF5F7 30%,
+  #FDF2F4 55%,
+  #F2DEE4 100%
+);
+
+
   color: var(--dark);
   line-height: 1.6;
   overflow-x: hidden;
@@ -25,7 +33,7 @@ body {
 
 /* ================= NAVBAR ================= */
 .navbar {
-  background: rgba(255, 255, 255, 0.96);
+  background: linear-gradient(45deg, #ffc3a0, #FFAFBD);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -154,7 +162,7 @@ body {
 }
 
 .btn-primary {
-  background-color: blueviolet;
+  background: linear-gradient(45deg, #FC5C7D, #6A82FB );
   color: white;
   padding: 5px 25px;
   border-radius: 40px;
@@ -254,7 +262,7 @@ body {
 
 /* ================= CTA ================= */
 .cta {
-  background: var(--dark);
+  background:linear-gradient(to right, #FFAFBD, #ffc3a0);
   color: white;
   padding: 80px 20px;
   text-align: center;
@@ -267,7 +275,7 @@ body {
 
 /* ================= FOOTER ================= */
 .footer {
-  background: #000;
+ background:linear-gradient(to right, #FFAFBD, #ffc3a0);
   color: #aaa;
   padding: 25px;
   text-align: center;

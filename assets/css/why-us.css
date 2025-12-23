@@ -15,14 +15,20 @@
 
 body {
   font-family: var(--font-body);
-  background: var(--light);
+   background: radial-gradient(
+  circle at top center,
+  #FFFFFF 0%,
+  #FFF5F7 30%,
+  #FDF2F4 55%,
+  #F2DEE4 100%
+);
   color: var(--dark);
   line-height: 1.7;
 }
 
 /* NAVBAR */
 .navbar {
-  background: white;
+  background: linear-gradient(45deg, #ffc3a0, #FFAFBD);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -57,33 +63,56 @@ body {
 }
 
 /* HERO */
+/* WHY HERO SECTION */
 .why-hero {
   height: 55vh;
-  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-    url("https://images.unsplash.com/photo-1602526216431-7d7b0bbebef7") center/cover;
+  background: linear-gradient(135deg, #D9A7C7, #FFFCDC);
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: white;
+  color: #FFFFFF;
 }
 
+/* Main Heading */
 .why-hero h1 {
   font-family: var(--font-heading);
   font-size: 54px;
+  font-weight: 600;
+  color: #FFFFFF;
+  transition:
+    color 0.4s ease,
+    transform 0.4s ease,
+    text-shadow 0.4s ease;
 }
 
+.why-hero h1:hover {
+  color: #C88A9A; /* similar to background, softly highlighted */
+  transform: translateY(-3px);
+  text-shadow: 0 8px 24px rgba(217, 167, 199, 0.45);
+}
+
+
+/* Subtitle */
 .why-hero p {
   max-width: 600px;
   margin-top: 20px;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.92);
+  transition: opacity 0.35s ease;
 }
 
-/* FEATURES */
+.why-hero:hover p {
+  opacity: 1;
+}
+
+/* FEATURES SECTION */
 .why-features {
   padding: 100px 20px;
   max-width: 1200px;
   margin: auto;
 }
+
 
 .features-grid {
   display: grid;
@@ -92,11 +121,21 @@ body {
 }
 
 .feature-card {
-  background: white;
+  background-color: #FFFFFF;
   padding: 40px;
-  border-radius: 22px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  border-radius: 30px;
+  box-shadow: 0 8px 30px rgba(242, 222, 228, 0.6);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    background-color 0.35s ease;
 }
+
+.feature-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 18px 45px rgba(200, 160, 170, 0.35);
+}
+
 
 .feature-card h3 {
   font-size: 22px;
@@ -104,46 +143,94 @@ body {
 }
 
 /* COMPARISON */
+/* WHY COMPARE SECTION */
 .why-compare {
-  background: white;
+  background: radial-gradient(
+    circle at top center,
+    #FFFFFF 0%,
+    #FFF5F7 30%,
+    #FDF2F4 55%,
+    #F2DEE4 100%
+  );
   padding: 100px 20px;
   text-align: center;
 }
 
+/* Heading */
 .why-compare h2 {
   font-family: var(--font-heading);
   font-size: 40px;
+  color: #2E2E2E;
+  transition: color 0.35s ease, transform 0.35s ease;
 }
 
+.why-compare h2:hover {
+  color: #C88A9A; /* rose highlight */
+  transform: translateY(-2px);
+}
+
+/* Compare Table */
 .compare-table {
   max-width: 900px;
   margin: 60px auto 0;
+  border-radius: 24px;
+  overflow: hidden;
 }
 
+/* Rows */
 .compare-row {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  padding: 18px;
-  border-bottom: 1px solid #eee;
+  padding: 18px 24px;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #F2DEE4;
+  transition: 
+    background-color 0.35s ease,
+    transform 0.35s ease;
 }
 
+.compare-row:hover {
+  background-color: #FDF2F4;
+  transform: translateY(-2px);
+}
+
+/* Header Row */
 .compare-row.header {
   font-weight: 600;
+  background-color: #FAE9EE;
+  color: #6B2F3A;
 }
 
-/* CTA */
+/* Text inside rows */
+.compare-row span {
+  transition: color 0.35s ease;
+}
+
+.compare-row:hover span {
+  color: #C07A8A;
+}
+
+/* CTA SECTION */
 .why-cta {
   padding: 80px 20px;
-  background: var(--dark);
-  color: white;
+  background: linear-gradient(45deg, #FFC3A0, #FFAFBD);
+  color: #FFFFFF;
   text-align: center;
 }
 
+/* CTA Heading */
 .why-cta h2 {
   font-family: var(--font-heading);
   font-size: 38px;
   margin-bottom: 25px;
+  transition: transform 0.35s ease, text-shadow 0.35s ease;
 }
+
+.why-cta h2:hover {
+  transform: translateY(-3px);
+  text-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
 
 .btn-primary {
   background: white;
@@ -156,7 +243,7 @@ body {
 
 /* FOOTER */
 .footer {
-  background: #000;
+  background: linear-gradient(45deg, #ffc3a0, #FFAFBD);
   color: #aaa;
   padding: 25px;
   text-align: center;

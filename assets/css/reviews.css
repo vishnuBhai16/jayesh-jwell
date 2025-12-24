@@ -7,21 +7,29 @@
   --font-body: 'Inter', sans-serif;
 }
 
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* BODY */
 body {
   font-family: var(--font-body);
-  background: var(--light);
+  background: radial-gradient(
+    circle at top center,
+    #FFFFFF 0%,
+    #FFF5F7 30%,
+    #FDF2F4 55%,
+    #F2DEE4 100%
+  );
   color: var(--dark);
 }
 
 /* NAVBAR */
 .navbar {
-  background: white;
+  background: linear-gradient(45deg, #ffc3a0, #FFAFBD);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -54,26 +62,37 @@ body {
   border-radius: 30px;
 }
 
-/* HERO */
+/* REVIEWS HERO */
 .reviews-hero {
   padding: 120px 20px;
-  background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-    url("https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f") center/cover;
+  background: linear-gradient(135deg, #FFF4D6, #D9A7C7);
   text-align: center;
-  color: white;
+  color: #2e2e2e;
 }
 
 .reviews-hero h1 {
   font-family: var(--font-heading);
   font-size: 52px;
+  margin-bottom: 12px;
+  transition:
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.4s ease;
+}
+
+.reviews-hero h1:hover {
+  transform: translateY(-4px);
+  color: #B58B9A;
 }
 
 .reviews-hero p {
-  margin-top: 15px;
+  margin-top: 10px;
   font-size: 18px;
+  max-width: 620px;
+  margin-inline: auto;
+  color: #555;
 }
 
-/* REVIEWS */
+/* REVIEWS SECTION */
 .reviews-section {
   padding: 100px 20px;
   max-width: 1200px;
@@ -86,46 +105,68 @@ body {
   gap: 40px;
 }
 
+/* REVIEW CARD */
 .review-card {
-  background: white;
-  padding: 40px;
-  border-radius: 25px;
+  background: #ffffff;
+  padding: 42px 38px;
+  border-radius: 26px;
   text-align: center;
-  box-shadow: 0 20px 45px rgba(0,0,0,0.08);
+  box-shadow: 0 25px 55px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s ease;
 }
 
+.review-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 40px 80px rgba(181, 139, 154, 0.25);
+}
+
+/* REVIEW IMAGE */
 .review-card img {
   width: 90px;
   height: 90px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
+  transition: transform 0.4s ease;
 }
 
+.review-card:hover img {
+  transform: scale(1.05);
+}
+
+/* NAME */
 .review-card h3 {
   font-size: 20px;
+  margin-bottom: 4px;
+  color: var(--dark);
 }
 
+/* ROLE */
 .review-card span {
   font-size: 14px;
   color: var(--gray);
 }
 
+/* STARS */
 .stars {
-  margin: 10px 0;
+  margin: 12px 0;
   color: var(--primary);
   font-size: 18px;
 }
 
+/* REVIEW TEXT */
 .review-card p {
   margin-top: 10px;
   font-size: 15px;
+  line-height: 1.6;
   color: #444;
 }
 
 /* CTA */
 .review-cta {
-  background: var(--dark);
+  background: linear-gradient(45deg, #ffc3a0, #FFAFBD);
   color: white;
   text-align: center;
   padding: 90px 20px;
@@ -150,7 +191,7 @@ body {
 
 /* FOOTER */
 .footer {
-  background: black;
+  background: linear-gradient(45deg, #ffc3a0, #FFAFBD);
   color: #aaa;
   text-align: center;
   padding: 25px;

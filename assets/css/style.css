@@ -141,98 +141,95 @@ body {
 
 /* TAG */
 .hero-tag {
-  color: #C88A9A;
+  color: #B58B9A; /* muted rose */
   font-weight: 600;
-  letter-spacing: 1px;
-  transition: color 0.3s ease;
+  letter-spacing: 0.8px;
+  transition: color 0.2s ease;
 }
 
 .hero-tag:hover {
-  color: #ccd2f3;
+  color: #9A6F7D;
 }
 
 /* MAIN HEADING */
 .hero h1 {
   font-family: var(--font-heading);
   font-size: 56px;
-  margin: 22px 0;
+  margin: 20px 0;
   color: var(--dark);
-  transition:
-    color 0.45s ease,
-    transform 0.45s ease,
-    text-shadow 0.45s ease;
+  transition: color 0.25s ease, transform 0.25s ease;
 }
 
 .hero h1:hover {
-  color: #C88A9A; /* matching gradient tone */
-  transform: translateY(-3px);
-  text-shadow: 0 10px 28px rgba(252, 92, 125, 0.35);
+  color: #B58B9A;
+  transform: translateY(-2px);
 }
 
 /* DESCRIPTION */
 .hero p {
   color: var(--gray);
   max-width: 480px;
+  line-height: 1.6;
 }
 
 /* ACTIONS */
 .hero-actions {
-  margin-top: 32px;
+  margin-top: 30px;
   display: flex;
-  gap: 20px;
+  gap: 18px;
 }
 
 /* PRIMARY BUTTON */
 .btn-primary {
-  background: linear-gradient(45deg, #FC5C7D, #6A82FB);
+  background: linear-gradient(135deg, #B58B9A, #7D6C9E);
   color: #FFFFFF;
   padding: 14px 34px;
   border-radius: 40px;
   text-decoration: none;
   font-weight: 500;
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease;
+  transition: transform 0.25s ease;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(252, 92, 125, 0.45);
 }
 
 /* SECONDARY BUTTON */
 .btn-secondary {
-  border: 1px solid var(--dark);
+  border: 1px solid #2E2E2E;
   padding: 14px 32px;
   border-radius: 40px;
   text-decoration: none;
   color: var(--dark);
-  transition:
-    background-color 0.35s ease,
-    color 0.35s ease,
-    transform 0.35s ease;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 .btn-secondary:hover {
-  background-color: #C88A9A;
+  background-color: #2E2E2E;
   color: #FFFFFF;
-  transform: translateY(-2px);
 }
 
 /* HERO IMAGE */
 .hero-image img {
   width: 100%;
-  border-radius: 30px;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+  border-radius: 28px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+  transition: transform 0.35s ease;
+}
+
+/* .hero-image img:hover {
+  transform: translateY(-6px);
+} */
+.hero-image img {
   transition:
-    transform 0.5s ease,
-    box-shadow 0.5s ease;
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .hero-image img:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 40px 100px rgba(252, 92, 125, 0.35);
+  transform: translateY(-6px) scale(1.015);
 }
+
+
 
 /* CARD (IF ANY PRESENT) */
 .card,
@@ -255,26 +252,51 @@ body {
 /* ================= TRUST ================= */
 .trust {
   background: radial-gradient(
-  to top center,
-  #FFFFFF 0%,
-  #FFF5F7 30%,
-  #FDF2F4 55%,
-  #F2DEE4 100%
-);
-  padding: 40px 20px;
+    ellipse at top,
+    #FFFFFF 0%,
+    #FFF6F8 35%,
+    #f7f4f5 70%,
+    #EED9E0 100%
+  );
+  padding: 50px 20px;
   display: flex;
   justify-content: center;
   gap: 80px;
   text-align: center;
 }
 
+/* TRUST ITEM */
+.trust-item {
+  transition: transform 0.3s ease;
+}
+
+.trust-item:hover {
+  transform: translateY(-4px);
+}
+
+/* NUMBER / HEADING */
 .trust-item h3 {
   font-size: 32px;
   font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 6px;
+  transition: color 0.3s ease;
 }
 
+.trust-item:hover h3 {
+  color: #B58B9A; /* elegant muted rose */
+}
+
+/* DESCRIPTION */
 .trust-item p {
   color: var(--gray);
+  font-size: 15px;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
+.trust-item:hover p {
+  color: #6F6F6F;
 }
 
 /* ================= COLLECTIONS ================= */

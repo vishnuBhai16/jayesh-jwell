@@ -25,28 +25,6 @@ body {
   color: var(--dark);
 }
 
-/* NAVBAR */
-.navbar {
-   background: linear-gradient(45deg, #ffc3a0, #FFAFBD);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
-
-.nav-container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-family: var(--font-heading);
-  font-size: 26px;
-}
 
 .nav-links a {
   margin-left: 25px;

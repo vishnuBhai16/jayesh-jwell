@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="assets/css/global.css">
 
   <!-- PAGE CSS -->
-  <link rel="stylesheet" href="assets/css/contact.css" />
+  <link rel="stylesheet" href="assets/css/contact.css">
 </head>
 <body>
 
@@ -47,13 +47,12 @@
 </div>
 
 <!-- ================= HERO ================= -->
-<!-- ================= HERO ================= -->
 <section class="contact-hero">
   <div class="hero-inner">
     <h1>Get in Touch</h1>
     <p>
-      Explore our exquisite silver anklets and connect with us for guidance on
-      premium craftsmanship and lasting elegance.
+      Discover premium silver craftsmanship and connect with us for
+      custom orders, guidance, and timeless elegance.
     </p>
   </div>
 </section>
@@ -84,22 +83,24 @@
     </div>
 
     <!-- CONTACT FORM -->
-    <form class="contact-form">
+    <form class="contact-form" id="contactForm">
       <h2>Send Us a Message</h2>
 
       <div class="form-group">
-        <input type="text" placeholder="Full Name" required>
+        <input type="text" id="name" placeholder="Full Name" required>
       </div>
 
       <div class="form-group">
-        <input type="email" placeholder="Email Address" required>
+        <input type="email" id="email" placeholder="Email Address" required>
       </div>
 
       <div class="form-group">
-        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
       </div>
 
-      <button type="submit" class="btn-primary">Submit Message</button>
+      <button type="submit" class="btn-primary">
+        Submit Message
+      </button>
     </form>
 
   </div>
@@ -107,7 +108,7 @@
 
 <!-- ================= MAP ================= -->
 <section class="map-section">
-  <iframe 
+  <iframe
     src="https://www.google.com/maps?q=New+Delhi&output=embed"
     loading="lazy"
     referrerpolicy="no-referrer-when-downgrade">
@@ -119,9 +120,12 @@
   <p>© 2025 R.N White Metals. All Rights Reserved.</p>
 </footer>
 
-
-<!-- NAVBAR JS -->
+<!-- ================= SCRIPTS ================= -->
 <script src="assets/js/main.js"></script>
+
+<!-- Firebase + Contact Submit -->
+<script type="module" src="assets/js/firebase.js"></script>
+<script type="module" src="assets/js/contact.js"></script>
 
 </body>
 </html>

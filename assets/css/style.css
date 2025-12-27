@@ -406,12 +406,6 @@ body {
     gap: 30px;
   }
 }
-/* ================= COLLECTIONS SECTION ================= */
-.collections {
-  padding: 90px 20px;
-  background: #fafafa;
-}
-
 .section-header {
   text-align: center;
   margin-bottom: 60px;

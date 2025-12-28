@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Your Cart — R.N White Metals</title>
+
+  <link rel="stylesheet" href="assets/css/global.css" />
+  <link rel="stylesheet" href="assets/css/product.css" />
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo">R.N White Metals</div>
+  </div>
+</header>
+
+<section class="product-hero">
+  <h1>Your Cart</h1>
+  <p>Review your selected jewellery</p>
+</section>
+
+<section class="product-section">
+  <div id="cartItems"></div>
+
+  <form id="checkoutForm" class="contact-form">
+    <h2>Checkout</h2>
+
+    <input type="text" id="name" placeholder="Full Name" required />
+    <input type="email" id="email" placeholder="Email" required />
+    <input type="text" id="phone" placeholder="Phone Number" required />
+    <textarea id="address" placeholder="Delivery Address" required></textarea>
+
+    <button type="submit" class="btn-primary">Place Order</button>
+  </form>
+</section>
+
+<script type="module" src="assets/js/cart.js"></script>
+</body>
+</html>

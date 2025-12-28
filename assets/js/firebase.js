@@ -1,9 +1,16 @@
-// assets/js/firebase.js
+// ================= FIREBASE CORE =================
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+// ================= FIRESTORE =================
+import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-// Your Firebase config
+// ================= ANALYTICS (OPTIONAL) =================
+import {
+  getAnalytics,
+  isSupported
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
+
+// 🔥 FIREBASE CONFIG (DO NOT CHANGE)
 const firebaseConfig = {
   apiKey: "AIzaSyCEaKztsNBTIMrC0Tg48uHvBaij1oSWjWk",
   authDomain: "rnwm-f8750.firebaseapp.com",
@@ -14,8 +21,16 @@ const firebaseConfig = {
   measurementId: "G-038MRST4TW"
 };
 
-// Initialize Firebase
+// ================= INITIALIZE APP =================
 const app = initializeApp(firebaseConfig);
 
-// Initialize Firestore
+// ================= FIRESTORE INSTANCE =================
 export const db = getFirestore(app);
+
+// ================= OPTIONAL ANALYTICS =================
+// Analytics works only on https or production domains
+isSupported().then((supported) => {
+  if (supported) {
+    getAnalytics(app);
+  }
+});

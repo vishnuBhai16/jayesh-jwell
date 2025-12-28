@@ -35,21 +35,6 @@ body {
   box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-.nav-container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-family: var(--font-heading);
-  font-size: 26px;
-  font-weight: 700;
-}
-
 .nav-links a {
   margin-left: 25px;
   text-decoration: none;

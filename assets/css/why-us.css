@@ -15,13 +15,13 @@
 
 body {
   font-family: var(--font-body);
-   background: radial-gradient(
-  circle at top center,
-  #FFFFFF 0%,
-  #FFF5F7 30%,
-  #FDF2F4 55%,
-  #F2DEE4 100%
-);
+  background: radial-gradient(
+    circle at top center,
+    #FFFFFF 0%,
+    #FFF5F7 30%,
+    #FDF2F4 55%,
+    #F2DEE4 100%
+  );
   color: var(--dark);
   line-height: 1.7;
 }
@@ -32,7 +32,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .nav-links a {
@@ -47,7 +47,6 @@ body {
   border-radius: 30px;
 }
 
-/* HERO */
 /* WHY HERO SECTION */
 .why-hero {
   height: 55vh;
@@ -57,38 +56,61 @@ body {
   justify-content: center;
   text-align: center;
   color: #FFFFFF;
+  padding: 0 20px;
 }
 
-/* Main Heading */
+/* Main Heading – page load + hover */
 .why-hero h1 {
   font-family: var(--font-heading);
   font-size: 54px;
   font-weight: 600;
-  color: #FFFFFF;
-  transition:
-    color 0.4s ease,
-    transform 0.4s ease,
-    text-shadow 0.4s ease;
+  color: black;
+
+  opacity: 0;
+  transform: translateY(40px);
+  animation: whyHeroTitleReveal 1.6s ease-out forwards;
+
+  transition: color 0.4s ease, transform 0.4s ease, text-shadow 0.4s ease;
 }
 
 .why-hero h1:hover {
-  color: #C88A9A; /* similar to background, softly highlighted */
+  color: #C88A9A;
   transform: translateY(-3px);
   text-shadow: 0 8px 24px rgba(217, 167, 199, 0.45);
 }
 
-
-/* Subtitle */
+/* Subtitle – page load + hover */
 .why-hero p {
   max-width: 600px;
-  margin-top: 20px;
+  margin: 20px auto 0;
   font-size: 18px;
-  color: rgba(255, 255, 255, 0.92);
+  color: rgb(42, 41, 41);
+  text-align: center;
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: whyHeroTextReveal 1.9s ease-out forwards;
+
   transition: opacity 0.35s ease;
 }
 
 .why-hero:hover p {
   opacity: 1;
+}
+
+/* Keyframes for WHY HERO animations */
+@keyframes whyHeroTitleReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes whyHeroTextReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* FEATURES SECTION */
@@ -97,7 +119,6 @@ body {
   max-width: 1200px;
   margin: auto;
 }
-
 
 .features-grid {
   display: grid;
@@ -110,10 +131,7 @@ body {
   padding: 40px;
   border-radius: 30px;
   box-shadow: 0 8px 30px rgba(242, 222, 228, 0.6);
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease,
-    background-color 0.35s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background-color 0.35s ease;
 }
 
 .feature-card:hover {
@@ -121,13 +139,11 @@ body {
   box-shadow: 0 18px 45px rgba(200, 160, 170, 0.35);
 }
 
-
 .feature-card h3 {
   font-size: 22px;
   margin-bottom: 12px;
 }
 
-/* COMPARISON */
 /* WHY COMPARE SECTION */
 .why-compare {
   background: radial-gradient(
@@ -141,7 +157,6 @@ body {
   text-align: center;
 }
 
-/* Heading */
 .why-compare h2 {
   font-family: var(--font-heading);
   font-size: 40px;
@@ -150,7 +165,7 @@ body {
 }
 
 .why-compare h2:hover {
-  color: #C88A9A; /* rose highlight */
+  color: #C88A9A;
   transform: translateY(-2px);
 }
 
@@ -162,16 +177,13 @@ body {
   overflow: hidden;
 }
 
-/* Rows */
 .compare-row {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   padding: 18px 24px;
   background-color: #FFFFFF;
   border-bottom: 1px solid #F2DEE4;
-  transition: 
-    background-color 0.35s ease,
-    transform 0.35s ease;
+  transition: background-color 0.35s ease, transform 0.35s ease;
 }
 
 .compare-row:hover {
@@ -179,14 +191,12 @@ body {
   transform: translateY(-2px);
 }
 
-/* Header Row */
 .compare-row.header {
   font-weight: 600;
   background-color: #FAE9EE;
   color: #6B2F3A;
 }
 
-/* Text inside rows */
 .compare-row span {
   transition: color 0.35s ease;
 }
@@ -203,7 +213,6 @@ body {
   text-align: center;
 }
 
-/* CTA Heading */
 .why-cta h2 {
   font-family: var(--font-heading);
   font-size: 38px;
@@ -216,19 +225,29 @@ body {
   text-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
 }
 
-
+/* BUTTONS */
 .btn-primary {
-  background: white;
-  color: var(--dark);
-  padding: 14px 32px;
+  background: linear-gradient(135deg, #4776E6, #8E54E9);
+  color: white;
+  padding: 14px 36px;
   border-radius: 40px;
   text-decoration: none;
   font-weight: 500;
+  outline: 2px solid #020a4d;
+  outline-offset: 0px;
+  transition: transform 0.25s ease, outline-color 0.25s ease, background 0.35s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #780206, #061161);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  outline-color: #020a4d;
 }
 
 /* FOOTER */
 .footer {
-  background: linear-gradient(45deg, #ffc3a0, #FFAFBD);
+  background: linear-gradient(to right, #282825, #332219);
   color: #aaa;
   padding: 25px;
   text-align: center;

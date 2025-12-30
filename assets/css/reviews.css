@@ -47,19 +47,38 @@ body {
   color: #2e2e2e;
 }
 
+/* Main Heading */
 .reviews-hero h1 {
   font-family: var(--font-heading);
   font-size: 52px;
   margin-bottom: 12px;
-  transition:
-    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
-    color 0.4s ease;
+  color: #2e2e2e;
+
+  /* Initial state for page load animation */
+  opacity: 0;
+  transform: translateY(40px);
+
+  /* Animate upward on page load */
+  animation: reviewsHeroReveal 1.5s ease-out forwards;
+
+  /* Hover transition */
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+              color 0.4s ease;
 }
 
 .reviews-hero h1:hover {
   transform: translateY(-4px);
   color: #B58B9A;
 }
+
+/* Keyframes for page load animation */
+@keyframes reviewsHeroReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 .reviews-hero p {
   margin-top: 10px;
@@ -159,16 +178,26 @@ body {
 }
 
 .btn-primary {
-  background: white;
-  color: var(--dark);
+  background: linear-gradient(135deg, #4776E6, #8E54E9);
+  color: white;
   padding: 14px 36px;
   border-radius: 40px;
   text-decoration: none;
+  font-weight: 500;
+  outline: 2px solid #020a4d;
+  outline-offset: 0px;
+  transition: transform 0.25s ease, outline-color 0.25s ease;
+}
+.btn-primary:hover {
+  background:linear-gradient(135deg,#780206,#061161);
+  color:#FFFFFF;
+  transform: translateY(-2px);
+  outline-color: #020a4d;
 }
 
 /* FOOTER */
 .footer {
-  background: linear-gradient(45deg, #ffc3a0, #FFAFBD);
+  background:linear-gradient(to right, #282825, #332219);
   color: #aaa;
   text-align: center;
   padding: 25px;

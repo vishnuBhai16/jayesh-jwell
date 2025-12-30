@@ -79,7 +79,51 @@ body {
   display: flex;
   align-items: center;
 }
+.logo {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 700;
+  display: inline-block;
+  perspective: 1000px;
 
+  /* BOUNCY FLIP ANIMATION */
+  animation: bouncyFlip 4.5s cubic-bezier(0.22, 1.4, 0.36, 1) infinite;
+  transform-origin: center;
+  backface-visibility: hidden;
+}
+
+/* 🎯 BOUNCY FLIP KEYFRAMES */
+@keyframes bouncyFlip {
+  0% {
+    transform: rotateX(0deg) translateY(0);
+    color: #a80355;
+  }
+
+  25% {
+    transform: rotateX(180deg) translateY(-6px);
+    color: #c0899c;
+  }
+
+  40% {
+    transform: rotateX(155deg) translateY(2px); /* bounce back */
+  }
+
+  55% {
+    transform: rotateX(180deg) translateY(0);
+  }
+
+  85% {
+    transform: rotateX(180deg);
+    color: #c0899c;
+  }
+
+  100% {
+    transform: rotateX(0deg);
+    color: #a80355;
+  }
+}
+
+/* Desktop Nav */
 .nav-links a {
   margin-left: 26px;
   text-decoration: none;
@@ -87,6 +131,7 @@ body {
   font-weight: 500;
   transition: color 0.3s ease;
 }
+
 
 .nav-links a:hover {
   color: var(--primary);

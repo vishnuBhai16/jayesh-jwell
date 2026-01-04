@@ -51,19 +51,37 @@ body {
 
 /* ================= LOGO ================= */
 .logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-decoration: none;
   font-family: var(--font-heading);
   font-size: 26px;
   font-weight: 700;
-  letter-spacing: 1.2px;
-
-  background: linear-gradient(
-    120deg,
-    #2c1b22,
-    var(--accent-rose)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  perspective: 1000px;
+  transform-origin: center;
+  backface-visibility: hidden;
+  color: #a80355;
+  background-color: transparent;
 }
+
+/* Logo Image – No Color Effects */
+.logo img {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+  transform-origin: left center;
+  background: transparent;
+  box-shadow: none;
+  filter: none;
+  transition: transform 0.3s ease;
+}
+
+/* Hover Effect – Clean (No Color) */
+.logo img:hover {
+  transform: scale(1.05);
+}
+
 
 /* ================= DESKTOP LINKS ================= */
 .nav-links {
@@ -297,8 +315,8 @@ body {
 
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  /* border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px; */
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 /* ================= NAV CONTAINER ================= */

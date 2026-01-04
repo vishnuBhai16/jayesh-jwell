@@ -40,7 +40,7 @@ body {
   border-radius: 0;
 }
 
-.logo {
+/* .logo {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -54,24 +54,6 @@ body {
   color: #a80355;
   background-color: transparent;
 }
-
-/* Logo Image – No Color Effects */
-.logo img {
-  height: 50px;
-  width: auto;
-  object-fit: contain;
-  transform-origin: left center;
-  background: transparent;
-  box-shadow: none;
-  filter: none;
-  transition: transform 0.3s ease;
-}
-
-/* Hover Effect – Clean (No Color) */
-.logo img:hover {
-  transform: scale(1.05);
-}
-
 
 
 /* Desktop Nav */

@@ -39,3 +39,25 @@ function addToCart(product) {
   localStorage.setItem("cart", JSON.stringify(cart));
   alert("Product added to cart 🛒");
 }
+// ================= WHOLESALE ALERT =================
+document.addEventListener("DOMContentLoaded", () => {
+  const alertBox = document.getElementById("wholesaleAlert");
+  const okBtn = document.getElementById("alertOkBtn");
+
+  if (!alertBox) return;
+
+  // Show alert on page load
+  setTimeout(() => {
+    alertBox.classList.add("show");
+  }, 300);
+
+  // Auto hide after 2 seconds
+  setTimeout(() => {
+    alertBox.classList.remove("show");
+  }, 10000);
+
+  // Hide on OK click
+  okBtn.addEventListener("click", () => {
+    alertBox.classList.remove("show");
+  });
+});

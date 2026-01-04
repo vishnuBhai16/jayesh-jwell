@@ -83,7 +83,7 @@ body {
 
 /* FAQ SECTION */
 .faq-section {
-  padding: 120px 20px;
+  padding: 50px 20px;
   max-width: 900px;
   margin: auto;
 }
@@ -132,9 +132,9 @@ body {
   transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.faq-item.active .faq-question span {
+/* .faq-item.active .faq-question span {
   transform: rotate(45deg);
-}
+} */
 
 /* ANSWER */
 .faq-answer {
@@ -152,7 +152,8 @@ body {
 }
 
 .faq-answer p {
-  padding-top: 10px;
+  padding-top: 7px;
+  padding-bottom: 15px;
   font-size: 15px;
   line-height: 1.6;
   color: var(--gray);

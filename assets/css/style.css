@@ -348,6 +348,12 @@ body {
   right: 26px;
   z-index: 2;
   color: #fff;
+
+  /* ✅ CENTER ALIGN */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .collection-overlay h3 {
@@ -355,6 +361,7 @@ body {
   font-size: 28px;
   margin-bottom: 12px;
 }
+
 
 .shop-btn {
   display: inline-block;

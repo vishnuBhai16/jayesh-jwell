@@ -109,7 +109,7 @@ body {
 }
 
 /* ================= HAMBURGER ================= */
-.hamburger {
+/* .hamburger {
   display: none;
   flex-direction: column;
   gap: 6px;
@@ -134,7 +134,7 @@ body {
 
 .hamburger.open span:nth-child(3) {
   transform: rotate(-45deg) translate(6px, -6px);
-}
+} */
 
 /* ================= HERO ================= */
 .hero {

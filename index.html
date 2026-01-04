@@ -143,13 +143,16 @@
   </div>
 </section>
 <!-- ================= WHOLESALE ALERT ================= -->
-<div class="wholesale-alert" id="wholesaleAlert">
+<div class="wholesale-alert" id="wholesaleAlert" aria-hidden="true">
   <div class="alert-box">
-    <p>
-      ✨ <strong>We also work as Wholesale Silver Anklets Suppliers</strong><br>
+    <p class="alert-text">
+      ✨ <strong>We also work as Wholesale Silver Anklets Suppliers</strong><br />
       Bulk orders available at special prices
     </p>
-    <button id="alertOkBtn">OK</button>
+
+    <button id="alertOkBtn" class="alert-ok-btn">
+      OK
+    </button>
   </div>
 </div>
 
@@ -170,6 +173,28 @@
 <footer class="footer">
   <p>© 2025 R.N White Metals. All Rights Reserved.</p>
 </footer>
+<!-- ================= INSTANT ENQUIRY FLOAT ================= -->
+<div id="instantEnquiry" class="enquiry-text">
+  Instant Enquiry ✨
+</div>
+
+<!-- ================= POPUP FORM ================= -->
+<div id="enquiryPopup" class="enquiry-popup">
+  <div class="popup-card">
+    <span class="close-popup">&times;</span>
+
+    <h3>Instant Enquiry</h3>
+
+    <input type="text" id="enqName" placeholder="Your Name" />
+    <input type="tel" id="enqMobile" placeholder="Mobile Number" />
+    <textarea id="enqMessage" placeholder="Your Requirement"></textarea>
+
+    <button id="sendEnquiry">Send Enquiry</button>
+  </div>
+</div>
+
+<script type="module" src="../assets/js/instant-enquiry.js"></script>
+
 
 <!-- NAVBAR JS -->
 <script src="assets/js/main.js"></script>

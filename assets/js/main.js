@@ -44,20 +44,39 @@ document.addEventListener("DOMContentLoaded", () => {
   const alertBox = document.getElementById("wholesaleAlert");
   const okBtn = document.getElementById("alertOkBtn");
 
-  if (!alertBox) return;
+  if (!alertBox || !okBtn) return;
 
-  // Show alert on page load
+  // Detect navigation type
+  const navigationType = performance.getEntriesByType("navigation")[0]?.type;
+
+  // If page was reloaded, reset alert flag
+  if (navigationType === "reload") {
+    sessionStorage.removeItem("wholesaleAlertShown");
+  }
+
+  // Check if alert already shown in this session
+  const hasSeenAlert = sessionStorage.getItem("wholesaleAlertShown");
+  if (hasSeenAlert) return;
+
+  // Show alert
   setTimeout(() => {
     alertBox.classList.add("show");
   }, 300);
 
-  // Auto hide after 2 seconds
-  setTimeout(() => {
-    alertBox.classList.remove("show");
+  // Auto hide after 10 seconds
+  const autoHideTimer = setTimeout(() => {
+    hideAlert();
   }, 10000);
 
-  // Hide on OK click
-  okBtn.addEventListener("click", () => {
+  // OK button
+  okBtn.addEventListener("click", hideAlert);
+
+  function hideAlert() {
     alertBox.classList.remove("show");
-  });
+    sessionStorage.setItem("wholesaleAlertShown", "true");
+    clearTimeout(autoHideTimer);
+  }
 });
+
+
+

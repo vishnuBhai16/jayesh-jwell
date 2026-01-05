@@ -400,7 +400,7 @@ body {
 }
 
 .alert-box strong {
-  color: var(--primary);
+  color: #160404;
 }
 
 .alert-box button {

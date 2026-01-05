@@ -581,3 +581,45 @@ body {
   from { transform: scale(0.85); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
+
+/* ================= NAV RIGHT SOCIAL ICONS ================= */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Shared social style */
+.nav-social {
+  width: 38px;
+  height: 38px;
+  border-radius: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+
+  box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-social img {
+  width: 18px;
+  height: 18px;
+}
+
+/* Hover animation */
+.nav-social:hover {
+  transform: translateY(-2px) scale(1.08);
+}
+
+/* Platform glow */
+.nav-social.instagram:hover {
+  box-shadow: 0 0 16px rgba(225,48,108,0.55);
+}
+
+.nav-social.whatsapp:hover {
+  box-shadow: 0 0 18px rgba(37,211,102,0.6);
+}

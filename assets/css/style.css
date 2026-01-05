@@ -1,6 +1,6 @@
 /* ================= ROOT ================= */
 :root {
-  --primary: #ff61a6;
+  --primary: white;
   --dark: #0e0e0e;
   --light: #f9f9f9;
   --gray: #777;
@@ -71,23 +71,23 @@ body {
 }
 
 .nav-btn {
-  background: linear-gradient(135deg, #4776E6, #8E54E9);
+  background: linear-gradient(135deg, #ff7582, #725a7a );
   color: #FFFFFF;
   padding: 14px 34px;
   border-radius: 40px;
   text-decoration: none;
   font-weight: 500;
-  outline: 2px solid #020a4d;
+  outline: 2px solid #975aab;
   outline-offset: 0px;
   transition: transform 0.25s ease, outline-color 0.25s ease, background 0.35s ease;
 }
 
 
 .nav-btn:hover {
-   background: linear-gradient(135deg,#780206,#061161);
+   background: linear-gradient(135deg,#f54ea2, #ff7676);
   color: #FFFFFF;
   transform: translateY(-2px);
-  outline-color: #020a4d;
+  outline-color: #975aab;
 }
 
 /* ================= HAMBURGER ================= */
@@ -168,23 +168,23 @@ body {
 /* BUTTONS */
 .btn-primary,
 .btn-shop {
-  background: linear-gradient(135deg, #4776E6, #8E54E9);
+  background: linear-gradient(135deg, #ff7582, #725a7a);
   color: #FFFFFF;
   padding: 14px 34px;
   border-radius: 40px;
   text-decoration: none;
   font-weight: 500;
-  outline: 2px solid #020a4d;
+  outline: 2px solid #975aab;
   outline-offset: 0px;
   transition: transform 0.25s ease, outline-color 0.25s ease, background 0.35s ease;
 }
 
 .btn-primary:hover,
 .btn-shop:hover {
-  background: linear-gradient(135deg,#780206,#061161);
+  background: linear-gradient(135deg,  #f54ea2, #ff7676);
   color: #FFFFFF;
   transform: translateY(-2px);
-  outline-color: #020a4d;
+  outline-color: #975aab;
 }
 
 .btn-secondary {

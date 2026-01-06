@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard — Enquiries</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Firebase (v11.22.0 compat, verified working) -->
+  <script src="https://www.gstatic.com/firebasejs/11.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/11.22.0/firebase-firestore-compat.js"></script>
+
+  <!-- SheetJS for Excel -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/data.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Admin Dashboard</h1>
+      <p class="sub-header">Manage and Export Enquiries</p>
+    </header>
+
+    <main>
+      <div class="controls">
+        <button class="btn" id="exportAllBtn">Export All Entries</button>
+
+        <div class="date-filter">
+          <label>Start Date:</label>
+          <input type="date" id="startDate">
+          <label>End Date:</label>
+          <input type="date" id="endDate">
+          <button class="btn" id="exportDateBtn">Export By Date</button>
+        </div>
+      </div>
+
+      <div class="info">
+        <p>All exported data includes <strong>Name, Email, Mobile, Message, and Date</strong>. Use the date filter to export entries from a specific duration.</p>
+      </div>
+    </main>
+
+    <footer>
+      <p>© 2026 R.N White Metals. All Rights Reserved.</p>
+    </footer>
+  </div>
+
+  <!-- JS -->
+  <script src="assets/js/data.js"></script>
+</body>
+</html>

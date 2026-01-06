@@ -226,6 +226,7 @@
   <p>© 2025 R.N White Metals. All Rights Reserved.</p>
 </footer>
 <!-- ================= INSTANT ENQUIRY FLOAT ================= -->
+<!-- ================= INSTANT ENQUIRY FLOAT ================= -->
 <div id="instantEnquiry" class="enquiry-text">
   Instant Enquiry ✨
 </div>
@@ -233,18 +234,42 @@
 <!-- ================= POPUP FORM ================= -->
 <div id="enquiryPopup" class="enquiry-popup">
   <div class="popup-card">
-    <span class="close-popup">&times;</span>
+
+    <span class="close-popup" aria-label="Close">&times;</span>
 
     <h3>Instant Enquiry</h3>
 
-    <input type="text" id="enqName" placeholder="Your Name" />
-    <input type="tel" id="enqMobile" placeholder="Mobile Number" />
-    <textarea id="enqMessage" placeholder="Your Requirement"></textarea>
+    <input
+      type="text"
+      id="enqName"
+      placeholder="Your Name"
+      required
+      maxlength="50"
+    />
 
-    <button id="sendEnquiry">Send Enquiry</button>
+    <input
+      type="tel"
+      id="enqMobile"
+      placeholder="Mobile Number"
+      required
+      maxlength="15"
+    />
+
+    <textarea
+      id="enqMessage"
+      placeholder="Your Requirement (optional)"
+      rows="4"
+      maxlength="250"
+    ></textarea>
+
+    <button id="sendEnquiry">
+      Send Enquiry
+    </button>
+
   </div>
 </div>
 
+<!-- ================= SCRIPT ================= -->
 <script type="module" src="../assets/js/instant-enquiry.js"></script>
 
 

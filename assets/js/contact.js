@@ -1,11 +1,10 @@
-// assets/js/contact.js
-
 import { db } from "./firebase.js";
+
 import {
   collection,
   addDoc,
   serverTimestamp
-} from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 const form = document.getElementById("contactForm");
 
@@ -22,20 +21,31 @@ if (form) {
       return;
     }
 
+    const submitBtn = form.querySelector("button");
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
+
     try {
-      await addDoc(collection(db, "contactMessages"), {
+      await addDoc(collection(db, "enquiries"), {
+        type: "contact",
         name,
         email,
+        mobile: null,
         message,
+        sourcePage: "contact",
         createdAt: serverTimestamp()
       });
 
       alert("Message sent successfully ✨");
       form.reset();
 
-    } catch (error) {
-      console.error("Firebase Error:", error);
-      alert("Something went wrong. Please try again.");
+    } catch (err) {
+      console.error("Contact Error:", err);
+      alert("Something went wrong");
+
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Submit Message";
     }
   });
 }

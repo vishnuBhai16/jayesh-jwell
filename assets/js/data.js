@@ -1,100 +1,177 @@
-// Import Firebase modules (npm installed)
-import { initializeApp } from "firebase/app";
-import {
-  getFirestore,
-  collection,
-  getDocs,
-  query,
-  where,
-  orderBy,
-  Timestamp
-} from "firebase/firestore";
-
-// Firebase configuration
-const firebaseConfig = {
+// 🔥 Firebase Config (REAL – YOUR PROJECT)
+firebase.initializeApp({
   apiKey: "AIzaSyDlT5g-Q_fqE-tKJ0AOoXsIxaAiwdZBYrk",
   authDomain: "rnwm-a0d96.firebaseapp.com",
   projectId: "rnwm-a0d96",
-  storageBucket: "rnwm-a0d96.firebasestorage.app",
+  storageBucket: "rnwm-a0d96.appspot.com",
   messagingSenderId: "323887092612",
-  appId: "1:323887092612:web:dbe7bba1925c0b02c8c3d1",
-  measurementId: "G-9KL9ENX86Z",
+  appId: "1:323887092612:web:dbe7bba1925c0b02c8c3d1"
+});
+
+// Firestore reference
+const db = firebase.firestore();
+
+// Table body
+const tbody = document.getElementById("dataBody");
+
+// -------------------------
+// Utilities
+// -------------------------
+function clearTable() {
+  tbody.innerHTML = `
+    <tr>
+      <td colspan="6" style="text-align:center;">Loading...</td>
+    </tr>
+  `;
+}
+
+function noData() {
+  tbody.innerHTML = `
+    <tr>
+      <td colspan="6" style="text-align:center;">No data found</td>
+    </tr>
+  `;
+}
+
+// -------------------------
+// Render Row
+// -------------------------
+function renderDoc(doc) {
+  const d = doc.data();
+  const tr = document.createElement("tr");
+
+  const date = d.createdAt
+    ? d.createdAt.toDate().toLocaleString()
+    : "N/A";
+
+  tr.innerHTML = `
+    <td>${d.name || "-"}</td>
+    <td>${d.email || "-"}</td>
+    <td>${d.mobile || "-"}</td>
+    <td>${d.message || "-"}</td>
+    <td>${date}</td>
+    <td>
+      <button class="delete-btn">Delete</button>
+    </td>
+  `;
+
+  // Delete handler
+  tr.querySelector(".delete-btn").onclick = async () => {
+    if (!confirm("Delete this enquiry?")) return;
+
+    try {
+      await db.collection("enquiries").doc(doc.id).delete();
+      tr.remove();
+    } catch (err) {
+      alert("Delete failed");
+      console.error(err);
+    }
+  };
+
+  tbody.appendChild(tr);
+}
+
+// -------------------------
+// Load All Data
+// -------------------------
+document.getElementById("loadAllBtn").onclick = async () => {
+  clearTable();
+
+  try {
+    const snap = await db
+      .collection("enquiries")
+      .orderBy("createdAt", "desc")
+      .get();
+
+    tbody.innerHTML = "";
+
+    if (snap.empty) {
+      noData();
+      return;
+    }
+
+    snap.forEach(renderDoc);
+  } catch (err) {
+    console.error(err);
+    tbody.innerHTML = `<tr><td colspan="6">Error loading data</td></tr>`;
+  }
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+// -------------------------
+// Filter by Date
+// -------------------------
+document.getElementById("filterBtn").onclick = async () => {
+  const start = document.getElementById("startDate").value;
+  const end = document.getElementById("endDate").value;
 
-const tableBody = document.querySelector("#enquiriesTable tbody");
-
-// Render table rows
-function renderData(docs) {
-  tableBody.innerHTML = "";
-  if (!docs || docs.length === 0) {
-    tableBody.innerHTML = `<tr><td colspan="5" style="text-align:center;">No entries found</td></tr>`;
+  if (!start || !end) {
+    alert("Select both start and end date");
     return;
   }
 
-  docs.forEach((doc) => {
-    const d = doc.data();
-    const tr = document.createElement("tr");
-    tr.innerHTML = `
-      <td>${d.name || ""}</td>
-      <td>${d.email || ""}</td>
-      <td>${d.mobile || ""}</td>
-      <td>${d.message || ""}</td>
-      <td>${d.createdAt ? d.createdAt.toDate().toLocaleString() : ""}</td>
-    `;
-    tableBody.appendChild(tr);
+  clearTable();
+
+  const startDate = new Date(start);
+  const endDate = new Date(end);
+  endDate.setHours(23, 59, 59, 999);
+
+  try {
+    const snap = await db
+      .collection("enquiries")
+      .where(
+        "createdAt",
+        ">=",
+        firebase.firestore.Timestamp.fromDate(startDate)
+      )
+      .where(
+        "createdAt",
+        "<=",
+        firebase.firestore.Timestamp.fromDate(endDate)
+      )
+      .orderBy("createdAt", "desc")
+      .get();
+
+    tbody.innerHTML = "";
+
+    if (snap.empty) {
+      noData();
+      return;
+    }
+
+    snap.forEach(renderDoc);
+  } catch (err) {
+    console.error(err);
+    tbody.innerHTML = `<tr><td colspan="6">Error filtering data</td></tr>`;
+  }
+};
+
+// -------------------------
+// Auto load all on page load
+// -------------------------
+document.getElementById("loadAllBtn").click();
+// 📄 Download table as PDF
+document.getElementById("pdfBtn").onclick = () => {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF("l", "pt", "a4");
+
+  doc.text("Enquiries Report", 40, 40);
+
+  doc.autoTable({
+    html: "#dataTable",
+    startY: 60,
+    styles: {
+      fontSize: 8,
+      cellPadding: 4,
+    },
+    headStyles: {
+      fillColor: [34, 34, 34],
+      textColor: 255,
+    },
+    columnStyles: {
+      5: { cellWidth: 60 } // Action column
+    }
   });
-}
 
-// Fetch all entries
-async function fetchAll() {
-  try {
-    const q = query(collection(db, "enquiries"), orderBy("createdAt", "desc"));
-    const snapshot = await getDocs(q);
-    renderData(snapshot.docs);
-  } catch (err) {
-    console.error(err);
-    tableBody.innerHTML = `<tr><td colspan="5" style="text-align:center; color:red;">Error fetching data</td></tr>`;
-  }
-}
+  doc.save("enquiries.pdf");
+};
 
-// Fetch entries by date
-async function fetchByDate() {
-  const startInput = document.getElementById("startDate").value;
-  const endInput = document.getElementById("endDate").value;
-
-  if (!startInput || !endInput) {
-    alert("Please select both start and end dates!");
-    return;
-  }
-
-  const startDate = new Date(startInput);
-  const endDate = new Date(endInput + "T23:59:59"); // Include full day
-
-  try {
-    const q = query(
-      collection(db, "enquiries"),
-      where("createdAt", ">=", Timestamp.fromDate(startDate)),
-      where("createdAt", "<=", Timestamp.fromDate(endDate)),
-      orderBy("createdAt", "desc")
-    );
-    const snapshot = await getDocs(q);
-    renderData(snapshot.docs);
-  } catch (err) {
-    console.error(err);
-    tableBody.innerHTML = `<tr><td colspan="5" style="text-align:center; color:red;">Error fetching data</td></tr>`;
-  }
-}
-
-// Attach buttons
-const showAllBtn = document.getElementById("showAllBtn");
-const filterBtn = document.getElementById("filterBtn");
-
-if (showAllBtn) showAllBtn.addEventListener("click", fetchAll);
-if (filterBtn) filterBtn.addEventListener("click", fetchByDate);
-
-// Load all entries by default
-fetchAll();

@@ -1,69 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Dashboard — Enquiries</title>
+  <meta charset="UTF-8" />
+  <title>Admin Enquiries</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Firebase v8 -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 
-  <!-- Firebase (Compat) — MUST LOAD BEFORE data.js -->
-  <script src="https://www.gstatic.com/firebasejs/11.22.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/11.22.0/firebase-firestore-compat.js"></script>
+  <!-- jsPDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js"></script>
 
-  <!-- CSS -->
   <link rel="stylesheet" href="assets/css/data.css">
 </head>
+
 <body>
-  <div class="container">
-    <header>
-      <h1>Admin Dashboard</h1>
-      <p class="sub-header">View and Filter Enquiries</p>
-    </header>
 
-    <main>
-      <div class="controls">
-        <button class="btn" id="showAllBtn">Show All Entries</button>
+  <div class="header">
+    <h1>📩 Enquiries Dashboard</h1>
 
-        <div class="date-filter">
-          <label for="startDate">Start Date:</label>
-          <input type="date" id="startDate">
-          <label for="endDate">End Date:</label>
-          <input type="date" id="endDate">
-          <button class="btn" id="filterBtn">Filter By Date</button>
-        </div>
-      </div>
-
-      <div class="info">
-        <p>All entries include <strong>Name, Email, Mobile, Message, and Date</strong>.</p>
-      </div>
-
-      <div class="table-container">
-        <table id="enquiriesTable">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Mobile</th>
-              <th>Message</th>
-              <th>Date</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td colspan="5" style="text-align:center;">Loading data...</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </main>
-
-    <footer>
-      <p>© 2026 Your Company. All Rights Reserved.</p>
-    </footer>
+    <!-- PDF Download -->
+    <button id="pdfBtn" title="Download PDF">📄</button>
   </div>
 
-  <!-- JS -->
-  <!-- data.js must come AFTER Firebase scripts -->
+  <div class="controls">
+    <button id="loadAllBtn">Load All Enquiries</button>
+
+    <input type="date" id="startDate">
+    <input type="date" id="endDate">
+    <button id="filterBtn">Filter By Date</button>
+  </div>
+
+  <div class="table-wrapper">
+    <table id="dataTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Mobile</th>
+          <th>Message</th>
+          <th>Date</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="dataBody"></tbody>
+    </table>
+  </div>
+
   <script src="assets/js/data.js"></script>
 </body>
 </html>

@@ -347,10 +347,10 @@ body {
   background: linear-gradient(45deg, #ffc3a0, #FFAFBD);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+ border-top-left-radius: 9px;
+border-top-right-radius: 9px;
+border-bottom-left-radius: 2px;
+border-bottom-right-radius: 2px;
 }
 
 /* ================= WHOLESALE ALERT ================= */

@@ -142,7 +142,7 @@ body {
 
 .hero h1 {
   font-family: var(--font-heading);
-  font-size: 40px;
+  font-size: 49px;
   margin: 20px 0;
   color: var(--dark);
   transition: color 0.25s ease, transform 0.25s ease;

@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FAQs — R.N White Metals</title>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
 
   <!-- GLOBAL CSS (Navbar, Footer, Buttons) -->
   <link rel="stylesheet" href="assets/css/global.css">
@@ -14,127 +17,210 @@
   <!-- PAGE CSS -->
   <link rel="stylesheet" href="assets/css/faq.css" />
 </head>
+
 <body>
 
-<!-- ================= NAVBAR ================= -->
-<header class="navbar">
-  <div class="nav-container">
-    <div class="nav-left">
-      <a href="/" class="logo">
-        <img src="images/logo.png" alt="R.N White Metals Logo">
-      </a>
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar">
+    <div class="nav-container">
+  
+      <!-- LEFT : LOGO -->
+      <div class="nav-left">
+        <a href="/" class="logo">
+          <img src="images/logo.png" alt="R.N White Metals Logo">
+        </a>
+      </div>
+  
+      <!-- DESKTOP NAV -->
+      <nav class="nav-links">
+        <a href="#collections">Collections</a>
+        <a href="about.html">About</a>
+        <a href="why-us.html">Why Us</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html" class="nav-btn">Contact</a>
+      </nav>
+  
+      <!-- RIGHT : INSTAGRAM + HAMBURGER -->
+      <div class="nav-right">
+        <!-- Instagram Icon -->
+        <a
+          href="https://www.instagram.com/rnwmanklets/"
+          target="_blank"
+          class="nav-social instagram"
+          aria-label="Instagram"
+        >
+          <img
+            src="https://static.vecteezy.com/system/resources/thumbnails/038/447/961/small/ai-generated-instagram-logo-free-png.png"
+            alt="Instagram"
+          >
+        </a>
+      
+        <!-- WhatsApp Icon -->
+        <a
+    href="https://wa.me/919259035342?text=Hello%20*R.N%20White%20Metals*%2C%0AI%20am%20interested%20in%20silver%20anklets%20wholesale%20pricing.%0APlease%20share%20details.
+    "
+    target="_blank"
+    class="nav-social whatsapp"
+    aria-label="WhatsApp"
+  >
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+      alt="WhatsApp"
+    >
+  </a>
+  
+  
+        </a>
+      
+        <!-- Hamburger Menu -->
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      
+  
     </div>
+  </header>
 
+  <!-- ================= MOBILE MENU ================= -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="index.html#collections">Collections</a>
+    <a href="about.html">About</a>
+    <a href="why-us.html">Why Us</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="contact.html">Contact</a>
+  </div>
 
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="index.html#collections">Collections</a>
-      <a href="about.html">About</a>
-      <a href="why-us.html">Why Us</a>
-      <a href="reviews.html">Reviews</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+  <!-- ================= HERO ================= -->
+  <section class="faq-hero">
+    <h1>Frequently Asked Questions</h1>
+    <p>Everything you need to know before choosing your perfect piece</p>
+  </section>
 
-    <div class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
+  <!-- ================= FAQ ================= -->
+  <section class="faq-section">
+    <div class="faq-container">
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Is your jewellery certified?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Yes. All our jewellery is made using certified materials and
+            comes with authenticity assurance.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Where are your products manufactured?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Our jewellery is handcrafted by skilled artisans using a blend
+            of traditional and modern techniques.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          How do I place an order?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            You will be redirected to our official Shopify store to complete
+            your purchase securely.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          What is your return policy?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Returns and exchanges are handled directly via Shopify as per
+            the store policy.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section class="faq-cta">
+    <h2>Still Have Questions?</h2>
+    <p>Our team is happy to assist you anytime.</p>
+    <a href="contact.html" class="btn-primary">Contact Us</a>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <p>© 2025 R.N White Metals. All Rights Reserved.</p>
+  </footer>
+  <div id="instantEnquiry" class="enquiry-text">
+    Instant Enquiry ✨
+  </div>
+  
+  <!-- ================= POPUP FORM ================= -->
+  <div id="enquiryPopup" class="enquiry-popup">
+    <div class="popup-card">
+  
+      <span class="close-popup" aria-label="Close">&times;</span>
+  
+      <h3>Instant Enquiry</h3>
+  
+      <input
+        type="text"
+        id="enqName"
+        placeholder="Your Name"
+        required
+        maxlength="50"
+      />
+  
+      <input
+        type="tel"
+        id="enqMobile"
+        placeholder="Mobile Number"
+        required
+        maxlength="15"
+      />
+  
+      <textarea
+        id="enqMessage"
+        placeholder="Your Requirement (optional)"
+        rows="4"
+        maxlength="250"
+      ></textarea>
+  
+      <button id="sendEnquiry">
+        Send Enquiry
+      </button>
+  
     </div>
   </div>
-</header>
+  
+  <!-- ================= SCRIPT ================= -->
+  <script type="module" src="./assets/js/instant-enquiry.js"></script>
+  <!-- NAVBAR JS -->
+  <script src="assets/js/main.js"></script>
 
-<!-- ================= MOBILE MENU ================= -->
-<div class="mobile-menu" id="mobileMenu">
-  <a href="index.html">Home</a>
-  <a href="index.html#collections">Collections</a>
-  <a href="about.html">About</a>
-  <a href="why-us.html">Why Us</a>
-  <a href="reviews.html">Reviews</a>
-  <a href="contact.html">Contact</a>
-</div>
-
-<!-- ================= HERO ================= -->
-<section class="faq-hero">
-  <h1>Frequently Asked Questions</h1>
-  <p>Everything you need to know before choosing your perfect piece</p>
-</section>
-
-<!-- ================= FAQ ================= -->
-<section class="faq-section">
-  <div class="faq-container">
-
-    <div class="faq-item">
-      <button class="faq-question">
-        Is your jewellery certified?
-        <span>+</span>
-      </button>
-      <div class="faq-answer">
-        <p>
-          Yes. All our jewellery is made using certified materials and
-          comes with authenticity assurance.
-        </p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question">
-        Where are your products manufactured?
-        <span>+</span>
-      </button>
-      <div class="faq-answer">
-        <p>
-          Our jewellery is handcrafted by skilled artisans using a blend
-          of traditional and modern techniques.
-        </p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question">
-        How do I place an order?
-        <span>+</span>
-      </button>
-      <div class="faq-answer">
-        <p>
-          You will be redirected to our official Shopify store to complete
-          your purchase securely.
-        </p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question">
-        What is your return policy?
-        <span>+</span>
-      </button>
-      <div class="faq-answer">
-        <p>
-          Returns and exchanges are handled directly via Shopify as per
-          the store policy.
-        </p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ================= CTA ================= -->
-<section class="faq-cta">
-  <h2>Still Have Questions?</h2>
-  <p>Our team is happy to assist you anytime.</p>
-  <a href="contact.html" class="btn-primary">Contact Us</a>
-</section>
-
-<!-- ================= FOOTER ================= -->
-<footer class="footer">
-  <p>© 2025 R.N White Metals. All Rights Reserved.</p>
-</footer>
-
-<!-- NAVBAR JS -->
-<script src="assets/js/main.js"></script>
-
-<!-- FAQ ACCORDION JS -->
-<script src="assets/js/faq.js"></script>
+  <!-- FAQ ACCORDION JS -->
+  <script src="assets/js/faq.js"></script>
 
 </body>
+
 </html>
